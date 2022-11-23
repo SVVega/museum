@@ -1,7 +1,7 @@
 import './App.scss';
 import {Header} from "../header/header";
 import {BannerHome} from "../banner-main/banner-home";
-import {ShortNews} from "../short-news/short-news";
+import {AllNews} from "../all-news/all-news";
 
 const App = () => {
 
@@ -12,7 +12,7 @@ const App = () => {
             <div className={'container'}>
                 <Header/>
                 <BannerHome/>
-                <ShortNews/>
+                <AllNews/>
             </div>
         </div>
     );

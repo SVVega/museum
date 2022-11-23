@@ -1,4 +1,5 @@
 import React from "react";
+import './news-block.scss'
 
 export const NewsBlock = ({news = []}, isDate = '') => {
 

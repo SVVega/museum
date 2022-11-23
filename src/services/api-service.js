@@ -14,8 +14,12 @@ export default class ApiService {
             .catch(err => console.log('getPage', err));
     }
 
-    getLatestNews(countNews = 10) { // Выводит в зависимости количества постов
+    getTopNews(countNews = 10) { // Выводит в зависимости количества постов
         return this.getResource(`/posts?per_page=${countNews}`)
+    }
+
+    getMainNews(countNews = 10) { // Выводит в зависимости количества постов
+        return this.getResource(`/posts?per_page=${countNews}&offset=${30}`)
     }
 
 }

@@ -1,0 +1,12 @@
+.allNews {
+  &-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 1200px;
+    margin: 0 auto 0;
+    padding: 20px 40px 0;
+    box-sizing: content-box;
+    background-color: #fff;
+  }
+}
