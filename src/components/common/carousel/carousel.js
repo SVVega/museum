@@ -5,10 +5,6 @@ import './carousel.scss'
 
 export const Carousel = ({images = []}) => {
 
-    console.log('images', images)
-    console.log('images', Object.values(images))
-    console.log('images', process.env.PUBLIC_URL + images[0].src)
-
     return (images && images.length !== 0 &&
         <div className={'carousel'}>
             (<CarouselResponsive
@@ -22,9 +18,7 @@ export const Carousel = ({images = []}) => {
                 >
                         {images?.map((image, idx) => {
                         return (
-                            <div>
                             <img key={idx} className={'carousel-img'} src={image} alt={image}/>
-                            </div>
                         )
                     })}
                 </CarouselResponsive>
