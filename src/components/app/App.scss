@@ -1,0 +1,12 @@
+.app {
+    &-header-fon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-width: 1280px;
+      height: 270px;
+      background-color: #292929;
+      z-index: 0;
+     }
+}

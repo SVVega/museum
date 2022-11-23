@@ -1,10 +1,11 @@
-import logo from '../../logo.svg';
-import './App.css';
+import './App.scss';
+import {Header} from "../header/header";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <div>Museum news</div>
+    <div className={'app'}>
+        <div className={'app-header-fon'}/>
+        <Header/>
     </div>
   );
 }
