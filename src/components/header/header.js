@@ -25,7 +25,6 @@ export const Header = () => {
 
     return (
         <div className={'header'}>
-            <div className={'container'}>
                 <div className={'header-menu'}>
                     <div className={'header-menu-content'}>
                         <div className={'header-menu-content-left'}>
@@ -42,7 +41,6 @@ export const Header = () => {
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     )
 }
