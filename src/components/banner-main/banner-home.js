@@ -10,8 +10,6 @@ if (img1) imagesForBanner.push(img1)
 if (img2) imagesForBanner.push(img2)
 if (img3) imagesForBanner.push(img3)
 
-console.log('window.location.hostname', window.location.origin)
-
 export const BannerHome = () => {
 
     return ( imagesForBanner && imagesForBanner.length !== 0 &&

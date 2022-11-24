@@ -5,6 +5,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   width: 880px;
+  max-height: 550px;
   margin-bottom: 20px;
 
   &-column {
@@ -20,19 +21,19 @@
   }
 
   &-bottom {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    position: relative;
 
     &::before {
       display: block;
       position: absolute;
       content: "";
-      top: -20px;
+      top: -7px;
       width: 880px;
-      height: 6px;
+      height: 7px;
       background-color: #ffffff;
     }
 

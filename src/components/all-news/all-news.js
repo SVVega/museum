@@ -40,14 +40,12 @@ export const AllNews = ({isTypeNews}) => {
                 return {idNews: item?.id, titleNews: item?.title?.rendered, dateNews: dateFormat(new Date(item?.date))}
             })
             setNewsTop(newsTopData)
-            console.log('res', res)
         })
         mainNews(7).then(res => {
             const newsMainData = res.map((item, idx) => {
                 return {idNews: item?.id, titleNews: item?.title?.rendered}
             })
             setNewsMain(newsMainData)
-            console.log('res', res)
         })
     }, [])
 
@@ -58,14 +56,12 @@ export const AllNews = ({isTypeNews}) => {
                     return {idNews: item?.id, titleNews: item?.title?.rendered, dateNews: dateFormat(new Date(item?.date))}
                 })
                 setNewsTop(newsTopData)
-                console.log('res', res)
             })
             mainGoodNews(7).then(res => {
                 const newsMainData = res.map((item, idx) => {
                     return {idNews: item?.id, titleNews: item?.title?.rendered}
                 })
                 setNewsMain(newsMainData)
-                console.log('res', res)
             })
         } else {
             topNews(15).then(res => {
@@ -76,14 +72,12 @@ export const AllNews = ({isTypeNews}) => {
                     return {idNews: item?.id, titleNews: item?.title?.rendered, dateNews: dateFormat(new Date(item?.date))}
                 })
                 setNewsTop(newsTopData)
-                console.log('res', res)
             })
             mainNews(7).then(res => {
                 const newsMainData = res.map((item, idx) => {
                     return {idNews: item?.id, titleNews: item?.title?.rendered}
                 })
                 setNewsMain(newsMainData)
-                console.log('res', res)
             })
         }
     }, [isTypeNews])
