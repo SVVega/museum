@@ -1,8 +1,16 @@
 import './switch.scss'
-import {useRef} from "react";
+import {useEffect, useRef, useState} from "react";
 
-export const Switch = ({onToggle = false}) => {
+export const Switch = ({onToggle = false, isHover = false}) => {
     const ref = useRef()
+
+    const handleChange = (e) => {
+        if(e.target?.checked) {
+            onToggle('goodNews')
+        } else {
+            onToggle('allNews')
+        }
+    }
 
     return (
         <div className={'switch'}>
@@ -11,11 +19,12 @@ export const Switch = ({onToggle = false}) => {
                 id={'switch'}
                 className={'switch-checkbox'}
                 type={'checkbox'}
+                onChange={(e) => handleChange(e)}
             />
             <label className={'switch-label'}
                    htmlFor={'switch'}
             >
-                <span className={'button'}/>
+                <span className={`button ${isHover ? 'hover' : ''}`}/>
             </label>
         </div>
     )

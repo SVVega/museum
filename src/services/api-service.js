@@ -18,8 +18,16 @@ export default class ApiService {
         return this.getResource(`/posts?per_page=${countNews}`)
     }
 
-    getMainNews(countNews = 10) { // Выводит в зависимости количества постов
+    getTopGoodNews(countNews = 10) { // Выводит в зависимости количества постов
+        return this.getResource(`/posts?per_page=${countNews}&categories=44`)
+    }
+
+    getMainNews(countNews = 10) { // Выводит в зависимости количества постов и типа категории
         return this.getResource(`/posts?per_page=${countNews}&offset=${30}`)
+    }
+
+    getMainGoodNews(countNews = 10) { // Выводит в зависимости количества постов и типа категории
+        return this.getResource(`/posts?per_page=${countNews}&offset=${30}&categories=45`)
     }
 
 }

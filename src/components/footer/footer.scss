@@ -83,6 +83,9 @@
       }
       &-erratum {
         display: flex;
+        span {
+          margin-left: 5px;
+        }
       }
       &-limit {
         width: 30px;

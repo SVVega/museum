@@ -13,7 +13,7 @@ export const MainNews = ({newsMain = []}) => {
                     Главные новости
                 </div>
                 <div className={'mainNews-title'}>
-                    <NewsBlock news={newsMain}/>
+                    <NewsBlock news={newsMain} isMainNews={true}/>
                 </div>
 
             </div>

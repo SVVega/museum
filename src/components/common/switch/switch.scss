@@ -33,6 +33,7 @@
       display: flex;
       width: 10px;
       height: 10px;
+      color: #cfc9c9;
       margin: 3px;
       border-radius: 50%;
       border: 2px solid;
@@ -40,6 +41,9 @@
       transition: background-color .2s ease,-webkit-transform .2s ease;
       transition: transform .2s ease,background-color .2s ease;
       transition: transform .2s ease,background-color .2s ease,-webkit-transform .2s ease;
+    }
+    .button.hover {
+      color: #ffffff;
     }
   }
 }

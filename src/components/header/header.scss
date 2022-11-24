@@ -95,6 +95,43 @@
           color: #ffffff;
           -webkit-transition: opacity .5s ease;
           transition: opacity .5s ease;
+          cursor: pointer;
+        }
+
+        &-tooltip {
+          position: absolute;
+          top: 30px;
+          left: -30px;
+          width: 172px;
+          height: 50px;
+          -webkit-filter: drop-shadow(0 2px 4px rgba(0,0,0,.15));
+          filter: drop-shadow(0 2px 4px rgba(0,0,0,.15));
+          -webkit-transition: opacity .3s ease .3s;
+          transition: opacity .3s ease .3s;
+          pointer-events: none;
+
+          &::before {
+            position: absolute;
+            content: '';
+            top: -5px;
+            right: 20px;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+
+            border-bottom: 5px solid #ffffff;
+          }
+
+          &-text {
+            font: 600 13px/1.25 Lato Lenta,Helvetica Neue,Helvetica,Arial,sans-serif;
+            text-align: center;
+            color: #292929;
+            background-color: #fff;
+            padding: 8px 9px 9px 12px;
+            border-radius: 4px;
+          }
+
         }
 
         &-login {

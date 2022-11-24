@@ -1,13 +1,17 @@
 import React from "react"
 import {NewsBlock} from "../../common";
-import './short-news.scss'
+import './top-news.scss'
 
-export const ShortNews = ({newsTop = []}) => {
+export const TopNews = ({newsTop = [], isGoodNews = false}) => {
+
+
 
     return (
         <div className={'topNews'}>
             <div className={'topNews-column'}>
-                <NewsBlock news={newsTop}/>
+                <NewsBlock news={newsTop}
+                           isTopNews={true}
+                />
             </div>
             <div className={'topNews-bottom'}>
                 <button>Все новости</button>

@@ -1,11 +1,12 @@
-import {ShortNews} from "./short-news/short-news";
+import {TopNews} from "./top-news/top-news";
 import {MainNews} from "./main-news/main-news";
 import './all-news.scss'
 import React, {useEffect, useState} from "react"
 import ApiService from "../../services/api-service";
 import {format} from "date-fns";
 
-export const AllNews = () => {
+
+export const AllNews = ({isTypeNews}) => {
 
     const [newsTop, setNewsTop] = useState([])
     const [newsMain, setNewsMain] = useState([])
@@ -14,8 +15,16 @@ export const AllNews = () => {
         return await new ApiService().getTopNews(count)
     })
 
+    const topGoodNews = (async (count) => {
+        return await new ApiService().getTopGoodNews(count)
+    })
+
     const mainNews = (async (count) => {
         return await new ApiService().getMainNews(count)
+    })
+
+    const mainGoodNews = (async (count) => {
+        return await new ApiService().getMainGoodNews(count)
     })
 
     const dateFormat = (time) => {
@@ -23,9 +32,9 @@ export const AllNews = () => {
     }
 
     useEffect(() => {
-        topNews(30).then(res => {
+        topNews(15).then(res => {
             const newsTopData = res.map((item, idx) => {
-                if (idx === 0) {
+                if (idx === 0) { // Должно добавиться в выборку фото новости, но в параметрах api её нет
                     return {idNews: item?.id, titleNews: item?.title?.rendered, dateNews: dateFormat(new Date(item?.date))}
                 }
                 return {idNews: item?.id, titleNews: item?.title?.rendered, dateNews: dateFormat(new Date(item?.date))}
@@ -42,10 +51,47 @@ export const AllNews = () => {
         })
     }, [])
 
+    useEffect(() => {
+        if (isTypeNews === 'goodNews') {
+            topGoodNews(15).then(res => {
+                const newsTopData = res.map((item, idx) => {
+                    return {idNews: item?.id, titleNews: item?.title?.rendered, dateNews: dateFormat(new Date(item?.date))}
+                })
+                setNewsTop(newsTopData)
+                console.log('res', res)
+            })
+            mainGoodNews(7).then(res => {
+                const newsMainData = res.map((item, idx) => {
+                    return {idNews: item?.id, titleNews: item?.title?.rendered}
+                })
+                setNewsMain(newsMainData)
+                console.log('res', res)
+            })
+        } else {
+            topNews(15).then(res => {
+                const newsTopData = res.map((item, idx) => {
+                    if (idx === 0) { // Должно добавиться в выборку фото новости, но в параметрах api её нет
+                        return {idNews: item?.id, titleNews: item?.title?.rendered, dateNews: dateFormat(new Date(item?.date))}
+                    }
+                    return {idNews: item?.id, titleNews: item?.title?.rendered, dateNews: dateFormat(new Date(item?.date))}
+                })
+                setNewsTop(newsTopData)
+                console.log('res', res)
+            })
+            mainNews(7).then(res => {
+                const newsMainData = res.map((item, idx) => {
+                    return {idNews: item?.id, titleNews: item?.title?.rendered}
+                })
+                setNewsMain(newsMainData)
+                console.log('res', res)
+            })
+        }
+    }, [isTypeNews])
+
     return (
         <div className={'allNews'}>
             <div className={'allNews-wrapper'}>
-                <ShortNews newsTop={newsTop}/>
+                <TopNews newsTop={newsTop}/>
                 <MainNews newsMain={newsMain}/>
             </div>
         </div>
