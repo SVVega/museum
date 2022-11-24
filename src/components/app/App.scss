@@ -13,6 +13,7 @@
   .container {
     display: -webkit-box;
     display: flex;
+    justify-content: space-between;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;

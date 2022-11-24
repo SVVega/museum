@@ -1,0 +1,100 @@
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+  &-wrapper {
+    width: 1200px;
+    margin: 0 auto 0;
+    padding: 20px 40px 0;
+    box-sizing: content-box;
+    background-color: #fff;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px 0 30px 0;
+    box-sizing: content-box;
+    font: 400 13px/18px Lato Lenta, Helvetica Neue, Helvetica, Arial, sans-serif;
+    border-top: 4px solid #292929;
+
+    &-menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &-links {
+        display: flex;
+        gap: 20px;
+
+          span {
+            color: #292929;
+            -webkit-transition: color .2s ease-out;
+            transition: color .2s ease-out;
+            cursor: pointer;
+          }
+
+      }
+
+      &-logo {
+        display: flex;
+
+        &-label {
+          margin-right: 16px;
+        }
+
+        &-icon {
+          height: 21px;
+          width: 104px;
+
+          span:first-child {
+            font-size: 16px;
+            font-weight: 800;
+          }
+
+          span:last-child {
+            position: absolute;
+            width: 50px;
+            font-size: 7px;
+            line-height: 9px;
+            margin-left: 5px;
+            text-transform: uppercase;
+          }
+        }
+      }
+
+    }
+
+    &-versions {
+      display: -webkit-box;
+      display: flex;
+      gap: 30px;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      align-items: center;
+      padding-top: 12px;
+
+      &-copyright {
+        color: #999;
+      }
+      &-erratum {
+        display: flex;
+      }
+      &-limit {
+        width: 30px;
+        height: 30px;
+        margin-right: 2px;
+        margin-left: auto;
+        font: 700 11px/30px Lato Lenta,Helvetica Neue,Helvetica,Arial,sans-serif;
+        color: #fff;
+        text-align: center;
+        background-color: #292929;
+        border-radius: 50%;
+      }
+    }
+  }
+}
