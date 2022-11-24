@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/museum/static/css/main.cea31809.css",
+    "main.js": "/museum/static/js/main.7e35ac5c.js",
+    "static/media/img-2.jpg": "/museum/static/media/img-2.9c33f898667dba9796b3.jpg",
+    "static/media/first-top-news.jpg": "/museum/static/media/first-top-news.e8efe26148f71aefa822.jpg",
+    "static/media/img-3.jpg": "/museum/static/media/img-3.c75d098ef3f55d0829d4.jpg",
+    "static/media/img-1.jpg": "/museum/static/media/img-1.4c98a31a3fefe4655fdb.jpg",
+    "index.html": "/museum/index.html",
+    "main.cea31809.css.map": "/museum/static/css/main.cea31809.css.map",
+    "main.7e35ac5c.js.map": "/museum/static/js/main.7e35ac5c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cea31809.css",
+    "static/js/main.7e35ac5c.js"
+  ]
+}
